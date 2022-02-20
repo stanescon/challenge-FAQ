@@ -1,0 +1,119 @@
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+body {
+    background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 14px;
+}
+.cartao {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #FFFFFF;
+    width: 50%;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+.conteudo-cartao {
+    grid-column: 2;
+    z-index: 1;
+}
+.titulo-principal {
+    margin: 50px 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.pergunta-resposta {
+    margin: 30px 0;
+    line-height: 1.5rem;
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsl(0, 0%, 50%);
+    color: hsl(237, 12%, 33%);
+}
+.pergunta {
+    display: flex;
+    font-weight: bold;
+}
+.pergunta::after {
+    content: url(./images/icon-arrow-down.svg);
+    margin-left: auto;
+    transition: 0.3s;
+}
+.resposta-oculta {
+    display: none;
+}
+.imagem-fundo-desktop {
+    position: absolute;
+    object-fit: cover;
+    object-position: -548px -229px;
+    left: 0;
+    top: 0;
+}
+.imagem-mulher-desktop {
+    object-fit: cover;
+    object-position: -83px 0px;
+    position: absolute;
+    left: 0px;
+    top: 114px;
+}
+.imagem-caixa-desktop {
+    position: absolute;
+    left: -91px;
+    top: 243px;
+}
+.imagem-fundo-mobile {
+    display: none;
+}
+.imagem-mulher-mobile {
+    display: none;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 1500px) {
+    html{
+        height: 1400px;
+        overflow: auto;
+    }
+    .imagem-fundo-desktop, .imagem-mulher-desktop, .imagem-caixa-desktop {
+        display: none;
+    }
+    .cartao {
+        margin-top: 150px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .imagens {
+        height: 50px;
+    }
+    .imagem-fundo-mobile {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 55px;
+    }
+    .imagem-mulher-mobile {
+        width: 250px;
+        position: absolute;
+        display: block;
+        left: 55px;
+        top: -115px;
+    }
+    .titulo-principal {
+        text-align: center;
+    }
+
+}
+
+/* CLIQUES */
+
+.pergunta-activo {
+    color: #000000;
+}
+.pergunta-activo::after {
+    transform: rotate(180deg);
+}
